@@ -14,6 +14,7 @@ A Java-based web application that connects employers with job seekers.
 
 ## Team
 
+-
 - Member 1  vansh
 - Member 2  prashant
 - Member 3 deepak
