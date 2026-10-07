@@ -9,6 +9,18 @@ import model.User;
 public class AdminService {
 
     private final List<User> users = new ArrayList<>();
+    public AdminService() {
+
+    User admin = new User(
+            1,
+            "Admin",
+            "admin@jobportal.com",
+            "admin123",
+            "ADMIN"
+    );
+
+    users.add(admin);
+}
     private final List<Job> jobs = new ArrayList<>();
 
     public void addUser(User user) {
