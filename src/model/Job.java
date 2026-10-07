@@ -1,4 +1,5 @@
 package model;
+
 public class Job {
 
     private int jobId;
@@ -7,18 +8,34 @@ public class Job {
     private String location;
     private double salary;
     private int employerId;
+    private String status;
 
     public Job() {
     }
 
     public Job(int jobId, String title, String description,
                String location, double salary, int employerId) {
+
         this.jobId = jobId;
         this.title = title;
         this.description = description;
         this.location = location;
         this.salary = salary;
         this.employerId = employerId;
+        this.status = "PENDING";
+    }
+
+    public Job(int jobId, String title, String description,
+               String location, double salary, int employerId,
+               String status) {
+
+        this.jobId = jobId;
+        this.title = title;
+        this.description = description;
+        this.location = location;
+        this.salary = salary;
+        this.employerId = employerId;
+        this.status = status;
     }
 
     public int getJobId() {
@@ -67,5 +84,13 @@ public class Job {
 
     public void setEmployerId(int employerId) {
         this.employerId = employerId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
