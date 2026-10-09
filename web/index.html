@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobConnect | Find Your Next Opportunity</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">Job<span>Connect</span></a>
+
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="#jobs">Find Jobs</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="pages/login.html" class="login-link">Log In</a>
+            <a href="pages/signup.html" class="signup-btn">Sign Up</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="eyebrow">YOUR CAREER STARTS HERE</span>
+
+                <h1>Find the work that
+                    <span>moves you forward.</span>
+                </h1>
+
+                <p>
+                    Discover opportunities, connect with employers,
+                    and take the next step in your career.
+                </p>
+
+                <form class="search-form" action="#jobs" method="get">
+                    <div class="search-field">
+                        <label for="keyword">What are you looking for?</label>
+                        <input id="keyword" type="text" name="keyword"
+                               placeholder="Job title or keyword">
+                    </div>
+
+                    <div class="search-field">
+                        <label for="location">Where?</label>
+                        <input id="location" type="text" name="location"
+                               placeholder="City or remote">
+                    </div>
+
+                    <button type="submit">Search Jobs →</button>
+                </form>
+
+                <p class="search-note">
+                    Popular: Java Developer · Web Developer · AI/ML
+                </p>
+            </div>
+        </section>
+
+        
+<section class="categories section" id="categories">
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">EXPLORE OPPORTUNITIES</span>
+            <h2>Browse by category</h2>
+        </div>
+        <a href="#jobs" class="text-link">Explore jobs →</a>
+    </div>
+
+    <div class="category-grid">
+        <a href="#jobs" class="category-card" data-category="technology">
+            <span class="category-icon">💻</span>
+            <h3>Technology</h3>
+            <p>Software, IT & development</p>
+        </a>
+
+        <a href="#jobs" class="category-card" data-category="data">
+            <span class="category-icon">📊</span>
+            <h3>Data & Analytics</h3>
+            <p>Data science & AI/ML</p>
+        </a>
+
+        <a href="#jobs" class="category-card" data-category="design">
+            <span class="category-icon">🎨</span>
+            <h3>Design</h3>
+            <p>UI/UX & creative roles</p>
+        </a>
+
+        <a href="#jobs" class="category-card" data-category="business">
+            <span class="category-icon">📈</span>
+            <h3>Business</h3>
+            <p>Marketing & management</p>
+        </a>
+    </div>
+</section>
+
+        <section class="jobs-section section" id="jobs">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">HANDPICKED FOR YOU</span>
+                    <h2>Latest job opportunities</h2>
+                    <p>Explore roles to start building your future.</p>
+                </div>
+            </div>
+
+            <div class="job-list">
+                <article class="job-card">
+                    <div class="job-top">
+                        <div class="company-icon tech-icon">T</div>
+                        <span class="job-type">Internship</span>
+                    </div>
+                    <h3>Java Developer Intern</h3>
+                    <p class="company-name">Tech Solutions</p>
+                    <p class="job-location">📍 Noida, India</p>
+                    <p class="job-salary">Illustrative stipend: ₹10,000/month</p>
+                    <div class="job-tags">
+                        <span>Java</span>
+                        <span>SQL</span>
+                        <span>Backend</span>
+                    </div>
+                    <a href="pages/login.html" class="apply-link">
+                        View Details →
+                    </a>
+                </article>
+
+                <article class="job-card">
+                    <div class="job-top">
+                        <div class="company-icon design-icon">D</div>
+                        <span class="job-type full-time">Full-time</span>
+                    </div>
+                    <h3>Web Developer</h3>
+                    <p class="company-name">Digital Works</p>
+                    <p class="job-location">🌐 Remote</p>
+                    <p class="job-salary">Illustrative salary: ₹4 LPA</p>
+                    <div class="job-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <a href="pages/login.html" class="apply-link">
+                        View Details →
+                    </a>
+                </article>
+
+                <article class="job-card">
+                    <div class="job-top">
+                        <div class="company-icon ai-icon">F</div>
+                        <span class="job-type">Internship</span>
+                    </div>
+                    <h3>AI/ML Intern</h3>
+                    <p class="company-name">Future Tech</p>
+                    <p class="job-location">📍 Gurugram, India</p>
+                    <p class="job-salary">Illustrative stipend: ₹15,000/month</p>
+                    <div class="job-tags">
+                        <span>Python</span>
+                        <span>Machine Learning</span>
+                    </div>
+                    <a href="pages/login.html" class="apply-link">
+                        View Details →
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <span class="eyebrow">ABOUT JOBCONNECT</span>
+            <h2>Your next opportunity is closer than you think.</h2>
+            <p>
+                JobConnect brings job seekers and employers together
+                through a simple, accessible job-search experience.
+            </p>
+            <a href="#jobs" class="signup-btn">Explore Opportunities</a>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <a href="index.html" class="logo">Job<span>Connect</span></a>
+        <p>Connecting talent with opportunity.</p>
+        <p>© 2026 JobConnect. All rights reserved.</p>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>
