@@ -1,14 +1,11 @@
+
 -- =========================================================
 -- ONLINE JOB PORTAL DATABASE
 -- Member 2: Database + JDBC + Employer Module
 -- =========================================================
 
--- Create database
 CREATE DATABASE IF NOT EXISTS online_job_portal;
-
--- Select database
 USE online_job_portal;
-
 
 -- =========================================================
 -- 1. USERS TABLE
@@ -23,7 +20,6 @@ CREATE TABLE IF NOT EXISTS users (
     role ENUM('ADMIN', 'EMPLOYER', 'JOB_SEEKER') NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
 
 -- =========================================================
 -- 2. COMPANIES TABLE
@@ -45,7 +41,6 @@ CREATE TABLE IF NOT EXISTS companies (
         ON UPDATE CASCADE
 );
 
-
 -- =========================================================
 -- 3. JOBS TABLE
 -- Stores jobs posted by companies
@@ -61,6 +56,8 @@ CREATE TABLE IF NOT EXISTS jobs (
     job_type VARCHAR(50),
     experience_required VARCHAR(100),
     posted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status ENUM('PENDING', 'APPROVED', 'REJECTED')
+        NOT NULL DEFAULT 'PENDING',
 
     CONSTRAINT fk_job_company
         FOREIGN KEY (company_id)
@@ -68,7 +65,6 @@ CREATE TABLE IF NOT EXISTS jobs (
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
-
 
 -- =========================================================
 -- 4. RESUMES TABLE
@@ -87,7 +83,6 @@ CREATE TABLE IF NOT EXISTS resumes (
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
-
 
 -- =========================================================
 -- 5. APPLICATIONS TABLE
@@ -131,7 +126,6 @@ CREATE TABLE IF NOT EXISTS applications (
         UNIQUE (job_id, user_id)
 );
 
-
 -- =========================================================
--- DATABASE CREATED SUCCESSFULLY
--- =========================================================s
+-- DATABASE SCHEMA DEFINITION COMPLETED
+-- =========================================================
