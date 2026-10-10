@@ -158,12 +158,12 @@
         <h1>Create Your Account</h1>
         <p class="subtitle">Join our Online Job Portal</p>
 
-        <form id="signup-form">
+        <form id="signup-form" action="../register" method="POST">
             <label for="fullname">Full Name</label>
             <input
                 type="text"
                 id="fullname"
-                name="fullname"
+               name="name"
                 placeholder="Enter your full name"
                 autocomplete="name"
                 required
@@ -206,11 +206,18 @@
         </p>
     </main>
 
-    <script>
-        document.getElementById("signup-form").addEventListener("submit", function (event) {
+    
+<script>
+    document.getElementById("signup-form").addEventListener("submit", function (event) {
+        const password = document.getElementById("password");
+        const email = document.getElementById("email");
+
+        if (!password.value.trim() || !email.value.trim()) {
             event.preventDefault();
-            alert("The signup form design is ready, but account creation is not connected yet.");
-        });
-    </script>
+            alert("Please enter your email and password.");
+        }
+    });
+</script>
+
 </body>
 </html>
