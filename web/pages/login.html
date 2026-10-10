@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login | Online Job Portal</title>
+    <title>Account Login | Online Job Portal</title>
 
     <style>
         * {
@@ -120,6 +120,19 @@
             font-size: 12px;
         }
 
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 16px;
+            color: #2563eb;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
         @keyframes appear {
             from {
                 opacity: 0;
@@ -142,7 +155,9 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
+            *,
+            *::before,
+            *::after {
                 animation-duration: 0.01ms !important;
                 transition-duration: 0.01ms !important;
             }
@@ -157,9 +172,9 @@
         <h1>Online Job Portal</h1>
         <p class="subtitle">Welcome back! Sign in to continue.</p>
 
-        <h2>Admin Login</h2>
+        <h2>Account Login</h2>
 
-        <form action="../admin-login" method="post">
+        <form action="../login" method="post">
             <label for="email">Email Address</label>
             <input
                 type="email"
@@ -183,7 +198,11 @@
             <button type="submit">Login to Dashboard</button>
         </form>
 
-        <p class="footer-text">Online Job Portal · Admin Access</p>
+        <a class="back-link" href="../index.html">Back to Home</a>
+
+        <p class="footer-text">
+            Online Job Portal · Secure Account Access
+        </p>
     </main>
 </body>
 </html>

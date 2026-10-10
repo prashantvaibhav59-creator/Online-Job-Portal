@@ -1,15 +1,15 @@
 
 package dao;
 
-import model.Job;
-import util.DBConnection;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import model.Job;
+import util.DBConnection;
 
 public class JobDAO {
 
@@ -120,4 +120,38 @@ public class JobDAO {
             return ps.executeUpdate() > 0;
         }
     }
+    
+    // Get approved jobs for the homepage
+    public List<Job> getApprovedJobs() throws SQLException {
+        List<Job> jobs = new ArrayList<>();
+
+        String sql = """
+            SELECT j.job_id, j.title, j.description,
+                   j.location, j.salary, c.user_id, j.status
+            FROM jobs j
+            JOIN companies c ON j.company_id = c.company_id
+            WHERE j.status = 'APPROVED'
+            ORDER BY j.posted_at DESC
+            """;
+
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                jobs.add(new Job(
+                    rs.getInt("job_id"),
+                    rs.getString("title"),
+                    rs.getString("description"),
+                    rs.getString("location"),
+                    rs.getDouble("salary"),
+                    rs.getInt("user_id"),
+                    rs.getString("status")
+                ));
+            }
+        }
+
+        return jobs;
+    }
+
 }

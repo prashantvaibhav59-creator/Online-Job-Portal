@@ -15,8 +15,14 @@ public class DBConnection {
     public static Connection getConnection() throws SQLException {
         String password = System.getenv("JOB_PORTAL_DB_PASSWORD");
 
-        if (password == null) {
+        if (password == null || password.isEmpty()) {
             throw new SQLException("JOB_PORTAL_DB_PASSWORD is not set.");
+        }
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new SQLException("MySQL JDBC driver not found.", e);
         }
 
         return DriverManager.getConnection(URL, USER, password);

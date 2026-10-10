@@ -314,7 +314,7 @@ input {
     display: flex;
     width: 48px;
     height: 48px;
-    flex-shrink: 0;
+    flex-shri.apply-linknk: 0;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
@@ -383,13 +383,21 @@ input {
     font-size: 11px;
 }
 
-.apply-link {
+ {
+    display: inline-block;
+    width: auto;
     margin-top: auto;
-    padding-top: 15px;
+    padding: 15px 0 0;
+    border: none;
     border-top: 1px solid var(--border);
+    background: transparent;
     color: var(--primary);
+    font-family: inherit;
     font-size: 14px;
     font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
+    cursor: pointer;
 }
 
 /* ===== About Section ===== */
@@ -585,4 +593,166 @@ button:focus-visible,
 input:focus-visible {
     outline: 3px solid #60a5fa;
     outline-offset: 3px;
+}
+.job-card form {
+    width: 100%;
+    margin-top: auto;
+}
+
+.job-card form .apply-link {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 0 0;
+    border: none;
+    border-top: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+    color: var(--primary);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
+    appearance: none;
+    box-shadow: none;
+}
+.job-card .apply-form {
+    display: block;
+    width: 100%;
+    margin-top: auto;
+}
+
+.job-card .apply-form .apply-link {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+    border-top: 1px solid var(--border);
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 15px 0 0;
+    margin: 0;
+    color: var(--primary);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* Approved jobs loaded from the database */
+.job-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 25px;
+}
+
+.job-list .job-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.job-list .job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.job-list .job-card h3 {
+    color: #172554;
+    font-size: 21px;
+    margin: 0 0 14px;
+}
+
+.job-list .job-card p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 8px 0;
+}
+
+.job-list .job-card form {
+    margin-top: 18px;
+}
+
+.job-list .job-card .apply-link {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.job-list .job-card .apply-link:hover {
+    background: #1d4ed8;
+}
+
+/* Professional cards for database jobs */
+.job-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.job-list .job-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 26px;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.job-list .job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+}
+
+.job-list .job-card h3 {
+    color: #172554;
+    font-size: 22px;
+    margin: 0 0 16px;
+}
+
+.job-list .job-card p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.job-list .job-card form {
+    margin-top: 22px;
+}
+
+.job-list .job-card .apply-link {
+    width: 100%;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 9px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.job-list .job-card .apply-link:hover {
+    background: #1d4ed8;
 }
